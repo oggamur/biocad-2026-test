@@ -1,13 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+const fs = require('fs');
 const path = require('path');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
 
 const devices = [
   {
@@ -84,26 +76,6 @@ const devices = [
   }
 ];
 
-app.get('/api/devices', (req, res) => {
-  res.json(devices);
-});
-
-app.get('/api/devices.json', (req, res) => {
-  res.json(devices);
-});
-
-app.post('/api/devices/:id/state', (req, res) => {
-  const { id } = req.params;
-  const { state } = req.body;
-  const device = devices.find(d => d.id === id);
-  if (device) {
-    device.state = state;
-    res.json(device);
-  } else {
-    res.status(404).json({ error: 'Device not found' });
-  }
-});
-
 function generateAnalyticsData(deviceId, count = 25) {
   const workTypes = ['Проверка', 'Обработка', 'Калибровка', 'Тестирование', 'Обслуживание', 'Ремонт', 'Инспекция'];
   const users = ['kharinskaia', 'ivanov', 'petrov', 'sidorov', 'smirnov', 'kozlov', 'novikov', 'morozov'];
@@ -179,45 +151,42 @@ function generateDescriptionData(device) {
   };
 }
 
-app.get('/api/detailed-data/:id', (req, res) => {
-  const { id } = req.params;
-  const deviceId = id.replace('.json', '');
-  const device = devices.find(d => d.id === deviceId);
-  
-  if (!device) {
-    return res.status(404).json({ error: 'Device not found' });
-  }
-  
-  const analyticsData = generateAnalyticsData(deviceId, 25);
+const publicDir = path.join(__dirname, '..', 'public');
+const apiDir = path.join(publicDir, 'api');
+
+if (!fs.existsSync(apiDir)) {
+  fs.mkdirSync(apiDir, { recursive: true });
+}
+
+if (!fs.existsSync(path.join(apiDir, 'devices'))) {
+  fs.mkdirSync(path.join(apiDir, 'devices'), { recursive: true });
+}
+
+if (!fs.existsSync(path.join(apiDir, 'detailed-data'))) {
+  fs.mkdirSync(path.join(apiDir, 'detailed-data'), { recursive: true });
+}
+
+fs.writeFileSync(
+  path.join(apiDir, 'devices.json'),
+  JSON.stringify(devices, null, 2),
+  'utf8'
+);
+
+devices.forEach(device => {
+  const analyticsData = generateAnalyticsData(device.id, 25);
   const descriptionData = generateDescriptionData(device);
   
-  res.json({
+  const detailedData = {
     analytics: analyticsData,
     description: descriptionData
-  });
+  };
+  
+  fs.writeFileSync(
+    path.join(apiDir, 'detailed-data', `${device.id}.json`),
+    JSON.stringify(detailedData, null, 2),
+    'utf8'
+  );
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dashboards.html'));
-});
-
-app.get('/dashboards', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dashboards.html'));
-});
-
-app.get('/device-detail', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'device-detail.html'));
-});
-
-app.get('/error', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'error.html'));
-});
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.redirect('/error');
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+console.log('✅ Static data files generated successfully!');
+console.log(`📁 Files created in: ${apiDir}`);

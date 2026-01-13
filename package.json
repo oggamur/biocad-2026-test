@@ -8,7 +8,9 @@
     "start": "node server.js",
     "dev": "concurrently \"npm run watch:css\" \"npm start\"",
     "build:css": "sass scss/main.scss public/css/styles.css",
-    "watch:css": "sass --watch scss/main.scss:public/css/styles.css"
+    "watch:css": "sass --watch scss/main.scss:public/css/styles.css",
+    "generate:data": "node scripts/generate-static-data.js",
+    "build": "npm run generate:data && npm run build:css"
   },
   "keywords": [
     "dashboard",

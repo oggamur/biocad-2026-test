@@ -1,19 +1,5 @@
 import { deviceStatesManager } from '/js/deviceStates.js';
-import { showModal } from './device-detail/utils.js';
-
-async function safeFetch(url, options = {}) {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error('Fetch error:', error);
-    window.location.href = '/error';
-    throw error;
-  }
-}
+import { showModal, safeFetch } from './device-detail/utils.js';
 
 const deviceImages = {
   'ventilation': {

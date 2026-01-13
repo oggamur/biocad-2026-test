@@ -1,0 +1,187 @@
+{
+  "analytics": [
+    {
+      "date": "19.12.25",
+      "time": "02:17",
+      "workType": "Калибровка",
+      "additional": "Параметры: 38%",
+      "user": "smirnov"
+    },
+    {
+      "date": "21.12.25",
+      "time": "03:03",
+      "workType": "Ремонт",
+      "additional": "Статус: не удалось",
+      "user": "morozov"
+    },
+    {
+      "date": "27.12.25",
+      "time": "08:48",
+      "workType": "Проверка",
+      "additional": "Образец/серия: 117-26",
+      "user": "kozlov"
+    },
+    {
+      "date": "29.10.25",
+      "time": "19:31",
+      "workType": "Тестирование",
+      "additional": "Тест #703",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "17.12.25",
+      "time": "21:57",
+      "workType": "Обслуживание",
+      "additional": "Статус: требует внимания",
+      "user": "smirnov"
+    },
+    {
+      "date": "21.10.25",
+      "time": "13:02",
+      "workType": "Калибровка",
+      "additional": "Параметры: 62%",
+      "user": "morozov"
+    },
+    {
+      "date": "11.12.25",
+      "time": "22:15",
+      "workType": "Ремонт",
+      "additional": "Статус: в процессе",
+      "user": "sidorov"
+    },
+    {
+      "date": "26.11.25",
+      "time": "07:01",
+      "workType": "Проверка",
+      "additional": "Образец/серия: 117-26",
+      "user": "sidorov"
+    },
+    {
+      "date": "02.12.25",
+      "time": "08:54",
+      "workType": "Обслуживание",
+      "additional": "Статус: в процессе",
+      "user": "ivanov"
+    },
+    {
+      "date": "03.01.26",
+      "time": "02:07",
+      "workType": "Калибровка",
+      "additional": "Параметры: 49%",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "17.12.25",
+      "time": "01:58",
+      "workType": "Калибровка",
+      "additional": "Параметры: 69%",
+      "user": "morozov"
+    },
+    {
+      "date": "07.11.25",
+      "time": "23:06",
+      "workType": "Калибровка",
+      "additional": "Параметры: 82%",
+      "user": "morozov"
+    },
+    {
+      "date": "03.11.25",
+      "time": "17:04",
+      "workType": "Инспекция",
+      "additional": "Статус: требует внимания",
+      "user": "sidorov"
+    },
+    {
+      "date": "05.01.26",
+      "time": "22:53",
+      "workType": "Обработка",
+      "additional": "Результат: в процессе",
+      "user": "kozlov"
+    },
+    {
+      "date": "25.10.25",
+      "time": "22:55",
+      "workType": "Инспекция",
+      "additional": "Статус: успешно",
+      "user": "ivanov"
+    },
+    {
+      "date": "26.10.25",
+      "time": "13:17",
+      "workType": "Проверка",
+      "additional": "Образец/серия: 117-26",
+      "user": "ivanov"
+    },
+    {
+      "date": "24.10.25",
+      "time": "15:14",
+      "workType": "Инспекция",
+      "additional": "Статус: в процессе",
+      "user": "sidorov"
+    },
+    {
+      "date": "16.12.25",
+      "time": "21:52",
+      "workType": "Обработка",
+      "additional": "Результат: в процессе",
+      "user": "smirnov"
+    },
+    {
+      "date": "13.01.26",
+      "time": "11:18",
+      "workType": "Тестирование",
+      "additional": "Тест #592",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "22.11.25",
+      "time": "17:40",
+      "workType": "Тестирование",
+      "additional": "Тест #541",
+      "user": "kozlov"
+    },
+    {
+      "date": "11.12.25",
+      "time": "01:30",
+      "workType": "Инспекция",
+      "additional": "Статус: не удалось",
+      "user": "morozov"
+    },
+    {
+      "date": "23.10.25",
+      "time": "02:54",
+      "workType": "Калибровка",
+      "additional": "Параметры: 73%",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "08.01.26",
+      "time": "23:17",
+      "workType": "Обработка",
+      "additional": "Результат: в процессе",
+      "user": "novikov"
+    },
+    {
+      "date": "07.01.26",
+      "time": "04:10",
+      "workType": "Инспекция",
+      "additional": "Статус: успешно",
+      "user": "sidorov"
+    },
+    {
+      "date": "03.11.25",
+      "time": "15:39",
+      "workType": "Ремонт",
+      "additional": "Статус: успешно",
+      "user": "smirnov"
+    }
+  ],
+  "description": {
+    "id": "28fedb4b-85a1-11e8-80e5-xy5aug9t5s",
+    "serialNumber": "37767108",
+    "passportId": "18941",
+    "eo": "10025426-5",
+    "name": "Осмометр Киви Осмометрия ОСКР-1М",
+    "manufacturer": "Киви Осмометрия"
+  }
+}

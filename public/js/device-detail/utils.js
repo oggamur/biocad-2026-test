@@ -1,6 +1,12 @@
 export async function safeFetch(url, options = {}) {
   try {
-    const response = await fetch(url, options);
+    let fetchUrl = url;
+    if (url === '/api/devices' && !url.endsWith('.json')) {
+      fetchUrl = url + '.json';
+    } else if (url.startsWith('/api/detailed-data/') && !url.endsWith('.json')) {
+      fetchUrl = url + '.json';
+    }
+    const response = await fetch(fetchUrl, options);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

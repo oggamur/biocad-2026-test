@@ -1,0 +1,74 @@
+[
+  {
+    "id": "10025426-1",
+    "name": "Рециркуляционная вентиляция, Trox, xcube, Приточно-рециркуляционная установка 2С-ПР10.1",
+    "room": "101",
+    "state": "free",
+    "image": "ventilation",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "10025426-2",
+    "name": "Осмометр Киви Осмометрия ОСКР-1М",
+    "room": "2.5.03/2",
+    "state": "busy",
+    "image": "osmometer",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "10025426-3",
+    "name": "Рециркуляционная вентиляция, Trox, xcube, Приточно-рециркуляционная установка 2С-ПР10.1",
+    "room": "101",
+    "state": "free",
+    "image": "ventilation",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "10025426-4",
+    "name": "Система щелочи, Watertown, NaOH",
+    "room": "2.5.03/2",
+    "state": "free",
+    "image": "alkali",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "10025426-5",
+    "name": "Осмометр Киви Осмометрия ОСКР-1М",
+    "room": "2.5.03/2",
+    "state": "busy",
+    "image": "osmometer",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "10025426-6",
+    "name": "Осмометр Киви Осмометрия ОСКР-1М",
+    "room": "101",
+    "state": "busy",
+    "image": "osmometer",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "00-024004",
+    "name": "Бокс биологической безопасности",
+    "room": "507",
+    "state": "busy",
+    "image": "biosafety",
+    "alarms": 0,
+    "warnings": 0
+  },
+  {
+    "id": "10025426-7",
+    "name": "Рециркуляционная вентиляция, Trox, xcube, Приточно-рециркуляционная установка 2С-ПР10.1",
+    "room": "010",
+    "state": "free",
+    "image": "ventilation",
+    "alarms": 0,
+    "warnings": 0
+  }
+]

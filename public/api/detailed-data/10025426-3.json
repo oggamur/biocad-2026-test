@@ -1,0 +1,187 @@
+{
+  "analytics": [
+    {
+      "date": "12.12.25",
+      "time": "16:24",
+      "workType": "Обработка",
+      "additional": "Результат: успешно",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "29.10.25",
+      "time": "15:30",
+      "workType": "Тестирование",
+      "additional": "Тест #894",
+      "user": "novikov"
+    },
+    {
+      "date": "28.11.25",
+      "time": "02:21",
+      "workType": "Калибровка",
+      "additional": "Параметры: 17%",
+      "user": "sidorov"
+    },
+    {
+      "date": "17.12.25",
+      "time": "20:21",
+      "workType": "Обслуживание",
+      "additional": "Статус: не удалось",
+      "user": "morozov"
+    },
+    {
+      "date": "07.12.25",
+      "time": "17:15",
+      "workType": "Тестирование",
+      "additional": "Тест #778",
+      "user": "ivanov"
+    },
+    {
+      "date": "17.11.25",
+      "time": "23:29",
+      "workType": "Калибровка",
+      "additional": "Параметры: 9%",
+      "user": "sidorov"
+    },
+    {
+      "date": "31.10.25",
+      "time": "07:15",
+      "workType": "Калибровка",
+      "additional": "Параметры: 71%",
+      "user": "morozov"
+    },
+    {
+      "date": "30.11.25",
+      "time": "20:45",
+      "workType": "Ремонт",
+      "additional": "Статус: не удалось",
+      "user": "kozlov"
+    },
+    {
+      "date": "31.12.25",
+      "time": "01:45",
+      "workType": "Инспекция",
+      "additional": "Статус: в процессе",
+      "user": "kozlov"
+    },
+    {
+      "date": "04.11.25",
+      "time": "16:16",
+      "workType": "Калибровка",
+      "additional": "Параметры: 96%",
+      "user": "smirnov"
+    },
+    {
+      "date": "02.11.25",
+      "time": "13:08",
+      "workType": "Тестирование",
+      "additional": "Тест #820",
+      "user": "sidorov"
+    },
+    {
+      "date": "02.01.26",
+      "time": "06:35",
+      "workType": "Обслуживание",
+      "additional": "Статус: требует внимания",
+      "user": "morozov"
+    },
+    {
+      "date": "04.01.26",
+      "time": "23:32",
+      "workType": "Калибровка",
+      "additional": "Параметры: 24%",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "28.12.25",
+      "time": "11:18",
+      "workType": "Ремонт",
+      "additional": "Статус: требует внимания",
+      "user": "petrov"
+    },
+    {
+      "date": "13.11.25",
+      "time": "12:28",
+      "workType": "Тестирование",
+      "additional": "Тест #50",
+      "user": "sidorov"
+    },
+    {
+      "date": "08.11.25",
+      "time": "23:48",
+      "workType": "Обработка",
+      "additional": "Результат: требует внимания",
+      "user": "kozlov"
+    },
+    {
+      "date": "09.01.26",
+      "time": "16:54",
+      "workType": "Тестирование",
+      "additional": "Тест #98",
+      "user": "morozov"
+    },
+    {
+      "date": "07.01.26",
+      "time": "01:59",
+      "workType": "Калибровка",
+      "additional": "Параметры: 50%",
+      "user": "novikov"
+    },
+    {
+      "date": "17.12.25",
+      "time": "17:12",
+      "workType": "Тестирование",
+      "additional": "Тест #195",
+      "user": "smirnov"
+    },
+    {
+      "date": "02.11.25",
+      "time": "01:18",
+      "workType": "Калибровка",
+      "additional": "Параметры: 84%",
+      "user": "sidorov"
+    },
+    {
+      "date": "27.11.25",
+      "time": "17:01",
+      "workType": "Тестирование",
+      "additional": "Тест #620",
+      "user": "novikov"
+    },
+    {
+      "date": "09.12.25",
+      "time": "14:43",
+      "workType": "Тестирование",
+      "additional": "Тест #9",
+      "user": "novikov"
+    },
+    {
+      "date": "01.11.25",
+      "time": "07:07",
+      "workType": "Ремонт",
+      "additional": "Статус: в процессе",
+      "user": "petrov"
+    },
+    {
+      "date": "26.10.25",
+      "time": "04:55",
+      "workType": "Калибровка",
+      "additional": "Параметры: 8%",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "06.01.26",
+      "time": "05:34",
+      "workType": "Инспекция",
+      "additional": "Статус: требует внимания",
+      "user": "smirnov"
+    }
+  ],
+  "description": {
+    "id": "28fedb4b-85a1-11e8-80e5-ou1mezmpkcb",
+    "serialNumber": "37767111",
+    "passportId": "18944",
+    "eo": "10025426-3",
+    "name": "Рециркуляционная вентиляция, Trox, xcube, Приточно-рециркуляционная установка 2С-ПР10.1",
+    "manufacturer": "Trox"
+  }
+}

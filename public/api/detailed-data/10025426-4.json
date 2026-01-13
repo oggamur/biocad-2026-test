@@ -1,0 +1,187 @@
+{
+  "analytics": [
+    {
+      "date": "22.11.25",
+      "time": "05:00",
+      "workType": "Обработка",
+      "additional": "Результат: в процессе",
+      "user": "petrov"
+    },
+    {
+      "date": "24.10.25",
+      "time": "08:00",
+      "workType": "Инспекция",
+      "additional": "Статус: не удалось",
+      "user": "petrov"
+    },
+    {
+      "date": "06.01.26",
+      "time": "11:14",
+      "workType": "Тестирование",
+      "additional": "Тест #454",
+      "user": "smirnov"
+    },
+    {
+      "date": "11.01.26",
+      "time": "03:52",
+      "workType": "Ремонт",
+      "additional": "Статус: в процессе",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "24.12.25",
+      "time": "00:26",
+      "workType": "Обработка",
+      "additional": "Результат: успешно",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "19.10.25",
+      "time": "17:04",
+      "workType": "Ремонт",
+      "additional": "Статус: требует внимания",
+      "user": "morozov"
+    },
+    {
+      "date": "11.01.26",
+      "time": "01:27",
+      "workType": "Проверка",
+      "additional": "Образец/серия: 116-25",
+      "user": "morozov"
+    },
+    {
+      "date": "11.12.25",
+      "time": "03:09",
+      "workType": "Обработка",
+      "additional": "Результат: в процессе",
+      "user": "kozlov"
+    },
+    {
+      "date": "11.01.26",
+      "time": "07:29",
+      "workType": "Обслуживание",
+      "additional": "Статус: в процессе",
+      "user": "kozlov"
+    },
+    {
+      "date": "02.01.26",
+      "time": "22:35",
+      "workType": "Инспекция",
+      "additional": "Статус: в процессе",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "06.11.25",
+      "time": "11:25",
+      "workType": "Инспекция",
+      "additional": "Статус: в процессе",
+      "user": "novikov"
+    },
+    {
+      "date": "10.01.26",
+      "time": "00:14",
+      "workType": "Обработка",
+      "additional": "Результат: успешно",
+      "user": "kozlov"
+    },
+    {
+      "date": "21.10.25",
+      "time": "02:25",
+      "workType": "Обслуживание",
+      "additional": "Статус: не удалось",
+      "user": "morozov"
+    },
+    {
+      "date": "31.12.25",
+      "time": "09:23",
+      "workType": "Калибровка",
+      "additional": "Параметры: 99%",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "01.01.26",
+      "time": "05:22",
+      "workType": "Калибровка",
+      "additional": "Параметры: 8%",
+      "user": "novikov"
+    },
+    {
+      "date": "28.12.25",
+      "time": "15:20",
+      "workType": "Инспекция",
+      "additional": "Статус: не удалось",
+      "user": "ivanov"
+    },
+    {
+      "date": "11.01.26",
+      "time": "00:07",
+      "workType": "Инспекция",
+      "additional": "Статус: успешно",
+      "user": "morozov"
+    },
+    {
+      "date": "07.12.25",
+      "time": "09:55",
+      "workType": "Обработка",
+      "additional": "Результат: требует внимания",
+      "user": "sidorov"
+    },
+    {
+      "date": "28.11.25",
+      "time": "08:09",
+      "workType": "Калибровка",
+      "additional": "Параметры: 60%",
+      "user": "sidorov"
+    },
+    {
+      "date": "05.11.25",
+      "time": "23:20",
+      "workType": "Тестирование",
+      "additional": "Тест #420",
+      "user": "novikov"
+    },
+    {
+      "date": "04.01.26",
+      "time": "07:18",
+      "workType": "Обработка",
+      "additional": "Результат: в процессе",
+      "user": "kharinskaia"
+    },
+    {
+      "date": "20.12.25",
+      "time": "16:36",
+      "workType": "Обработка",
+      "additional": "Результат: не удалось",
+      "user": "kozlov"
+    },
+    {
+      "date": "28.12.25",
+      "time": "05:16",
+      "workType": "Тестирование",
+      "additional": "Тест #224",
+      "user": "sidorov"
+    },
+    {
+      "date": "13.01.26",
+      "time": "16:57",
+      "workType": "Тестирование",
+      "additional": "Тест #968",
+      "user": "smirnov"
+    },
+    {
+      "date": "17.10.25",
+      "time": "09:49",
+      "workType": "Инспекция",
+      "additional": "Статус: не удалось",
+      "user": "kharinskaia"
+    }
+  ],
+  "description": {
+    "id": "28fedb4b-85a1-11e8-80e5-pqm08xtguu",
+    "serialNumber": "37767109",
+    "passportId": "18944",
+    "eo": "10025426-4",
+    "name": "Система щелочи, Watertown, NaOH",
+    "manufacturer": "Watertown"
+  }
+}
