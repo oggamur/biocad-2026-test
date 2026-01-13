@@ -1,10 +1,14 @@
 export async function safeFetch(url, options = {}) {
   try {
     let fetchUrl = url;
-    if (url === '/api/devices' && !url.endsWith('.json')) {
-      fetchUrl = url + '.json';
-    } else if (url.startsWith('/api/detailed-data/') && !url.endsWith('.json')) {
-      fetchUrl = url + '.json';
+    if (url === './api/devices' || url === '/api/devices') {
+      fetchUrl = './api/devices.json';
+    } else if (url.startsWith('./api/detailed-data/') || url.startsWith('/api/detailed-data/')) {
+      if (!url.endsWith('.json')) {
+        fetchUrl = url.replace('/api/', './api/') + '.json';
+      } else {
+        fetchUrl = url.replace('/api/', './api/');
+      }
     }
     const response = await fetch(fetchUrl, options);
     if (!response.ok) {
@@ -13,7 +17,7 @@ export async function safeFetch(url, options = {}) {
     return await response.json();
   } catch (error) {
     console.error('Fetch error:', error);
-    window.location.href = '/error';
+    window.location.href = './error.html';
     throw error;
   }
 }

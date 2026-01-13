@@ -1,4 +1,4 @@
-import { deviceStatesManager } from '/js/deviceStates.js';
+import { deviceStatesManager } from './deviceStates.js';
 import { showModal, safeFetch } from './device-detail/utils.js';
 
 const deviceImages = {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   const devicesGrid = document.getElementById('devicesGrid');
   
   try {
-    const devices = await safeFetch('/api/devices');
+    const devices = await safeFetch('./api/devices');
     renderDevices(devices);
     
     setupUserSection();
@@ -131,7 +131,7 @@ function createDeviceCard(device) {
     if (e.target.closest('.device-state-clickable') || e.target.closest('.state-dropdown')) {
       return;
     }
-    window.location.href = `/device-detail?id=${device.id}`;
+    window.location.href = `./device-detail.html?id=${device.id}`;
   });
   
   if (canChange) {

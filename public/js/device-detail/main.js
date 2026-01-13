@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   }
   
   try {
-    const devices = await safeFetch('/api/devices');
+    const devices = await safeFetch('./api/devices');
     const device = devices.find(d => d.id === deviceId);
     
     if (!device) {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       return;
     }
     
-    const detailedData = await safeFetch(`/api/detailed-data/${deviceId}`);
+    const detailedData = await safeFetch(`./api/detailed-data/${deviceId}`);
     
     paginationState.originalData = [...detailedData.analytics];
     paginationState.data = detailedData.analytics;

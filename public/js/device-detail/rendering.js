@@ -2,8 +2,8 @@ import { getDeviceImageHTML, getStateText } from './utils.js';
 import { paginationState } from './state.js';
 import { sortData } from './sorting.js';
 import { findDateRange, formatDateString } from './dateFilter.js';
-import { favoritesManager } from '/js/favorites.js';
-import { deviceStatesManager } from '/js/deviceStates.js';
+import { favoritesManager } from '../favorites.js';
+import { deviceStatesManager } from '../deviceStates.js';
 
 export function renderDeviceDetail(device, detailedData) {
   const card = document.getElementById('deviceDetailCard');

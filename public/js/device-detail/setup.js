@@ -1,8 +1,8 @@
 import { paginationState, datePickers, eventListeners } from './state.js';
 import { renderTable, renderPagination } from './rendering.js';
 import { dateFilterState, formatDateString } from './dateFilter.js';
-import { favoritesManager } from '/js/favorites.js';
-import { deviceStatesManager } from '/js/deviceStates.js';
+import { favoritesManager } from '../favorites.js';
+import { deviceStatesManager } from '../deviceStates.js';
 import { getStateText, showModal } from './utils.js';
 
 
