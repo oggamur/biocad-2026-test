@@ -6,7 +6,9 @@ export const paginationState = {
   originalData: [],
   dateSort: null,
   userSort: null,
-  workTypeFilter: null
+  workTypeFilter: null,
+  initialMinDate: null,
+  initialMaxDate: null
 };
 
 export const datePickers = {

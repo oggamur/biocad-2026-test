@@ -71,6 +71,9 @@ export function renderAnalyticsTab(analyticsData) {
   const startDateValue = minDate ? formatDateString(minDate) : '';
   const endDateValue = maxDate ? formatDateString(maxDate) : '';
   
+  paginationState.initialMinDate = minDate;
+  paginationState.initialMaxDate = maxDate;
+  
   return `
     <div class="analytics-content">
       <div class="date-filters">

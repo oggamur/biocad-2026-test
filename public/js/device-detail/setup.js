@@ -73,6 +73,32 @@ export function setupTimeChips() {
   const chips = document.querySelectorAll('.time-chip');
   chips.forEach(chip => {
     chip.addEventListener('click', function() {
+      const isActive = this.classList.contains('active');
+      
+      if (isActive) {
+        this.classList.remove('active');
+        
+        if (datePickers.startPicker && datePickers.endPicker) {
+          if (paginationState.initialMinDate && paginationState.initialMaxDate) {
+            datePickers.startPicker.setDate(paginationState.initialMinDate, false);
+            datePickers.endPicker.setDate(paginationState.initialMaxDate, false);
+            
+            dateFilterState.startDate = paginationState.initialMinDate;
+            dateFilterState.endDate = paginationState.initialMaxDate;
+          } else {
+            datePickers.startPicker.clear();
+            datePickers.endPicker.clear();
+            
+            dateFilterState.startDate = null;
+            dateFilterState.endDate = null;
+          }
+          
+          paginationState.currentPage = 1;
+          updateTable();
+        }
+        return;
+      }
+      
       chips.forEach(c => c.classList.remove('active'));
       this.classList.add('active');
       
