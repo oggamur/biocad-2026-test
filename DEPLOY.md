@@ -37,10 +37,14 @@ node scripts/generate-static-data.js
 
 #### Вариант A: Автоматический деплой через GitHub Actions (рекомендуется)
 
+**Важно:** Сначала нужно включить GitHub Pages в настройках репозитория!
+
 1. В репозитории перейдите в **Settings** → **Pages**
 2. В разделе **Source** выберите **GitHub Actions**
-3. При каждом push в ветку `main` или `master` будет автоматически запускаться workflow из `.github/workflows/deploy.yml`
-4. Workflow автоматически:
+3. Нажмите **Save** (если кнопка доступна)
+4. Если опция "GitHub Actions" недоступна, выберите любую ветку (например, `main`) и папку `/public`, затем переключитесь обратно на **GitHub Actions**
+5. После этого при каждом push в ветку `main` или `master` будет автоматически запускаться workflow из `.github/workflows/deploy.yml`
+6. Workflow автоматически:
    - Установит зависимости
    - Сгенерирует статические данные
    - Скомпилирует SCSS

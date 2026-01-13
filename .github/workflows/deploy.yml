@@ -38,9 +38,6 @@ jobs:
       - name: Build CSS
         run: npm run build:css
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
