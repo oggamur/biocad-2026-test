@@ -1,15 +1,33 @@
+function getBasePath() {
+  const path = window.location.pathname;
+  const pathParts = path.split('/').filter(p => p);
+  if (pathParts.length > 0 && pathParts[0] !== '') {
+    const repoName = pathParts[0];
+    if (repoName !== 'index.html' && repoName !== 'dashboards.html' && repoName !== 'device-detail.html' && repoName !== 'error.html') {
+      return `/${repoName}`;
+    }
+  }
+  return '';
+}
+
 export async function safeFetch(url, options = {}) {
   try {
+    const basePath = getBasePath();
     let fetchUrl = url;
+    
     if (url === './api/devices' || url === '/api/devices') {
-      fetchUrl = './api/devices.json';
+      fetchUrl = `${basePath}/api/devices.json`;
     } else if (url.startsWith('./api/detailed-data/') || url.startsWith('/api/detailed-data/')) {
-      if (!url.endsWith('.json')) {
-        fetchUrl = url.replace('/api/', './api/') + '.json';
+      const cleanUrl = url.replace('./api/', '/api/').replace('/api/', '/api/');
+      if (!cleanUrl.endsWith('.json')) {
+        fetchUrl = `${basePath}${cleanUrl}.json`;
       } else {
-        fetchUrl = url.replace('/api/', './api/');
+        fetchUrl = `${basePath}${cleanUrl}`;
       }
+    } else if (url.startsWith('./') || url.startsWith('/')) {
+      fetchUrl = `${basePath}${url.replace('./', '/')}`;
     }
+    
     const response = await fetch(fetchUrl, options);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -17,9 +35,14 @@ export async function safeFetch(url, options = {}) {
     return await response.json();
   } catch (error) {
     console.error('Fetch error:', error);
-    window.location.href = './error.html';
+    const basePath = getBasePath();
+    window.location.href = `${basePath}/error.html`;
     throw error;
   }
+}
+
+function getImageBasePath() {
+  return getBasePath();
 }
 
 export const deviceImages = {
@@ -46,15 +69,18 @@ export const deviceImages = {
 };
 
 export function getDeviceImageHTML(imageType) {
+  const basePath = getImageBasePath();
   const device = deviceImages[imageType] || {
     name: 'Неизвестное устройство',
     image: '/images/devices/unknown-item.svg',
     fallback: '📱'
   };
   
+  const imagePath = `${basePath}${device.image}`;
+  
   return `
     <img 
-      src="${device.image}" 
+      src="${imagePath}" 
       alt="${device.name}" 
       class="device-detail-icon-img"
       onerror="this.outerHTML='<div class=\\'device-detail-icon\\'>${device.fallback}</div>'"

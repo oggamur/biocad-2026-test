@@ -1,6 +1,18 @@
 import { deviceStatesManager } from './deviceStates.js';
 import { showModal, safeFetch } from './device-detail/utils.js';
 
+function getBasePath() {
+  const path = window.location.pathname;
+  const pathParts = path.split('/').filter(p => p);
+  if (pathParts.length > 0 && pathParts[0] !== '') {
+    const repoName = pathParts[0];
+    if (repoName !== 'index.html' && repoName !== 'dashboards.html' && repoName !== 'device-detail.html' && repoName !== 'error.html') {
+      return `/${repoName}`;
+    }
+  }
+  return '';
+}
+
 const deviceImages = {
   'ventilation': {
     name: 'Рециркуляционная вентиляция',
@@ -25,15 +37,18 @@ const deviceImages = {
 };
 
 function getDeviceImageHTML(imageType) {
+  const basePath = getBasePath();
   const device = deviceImages[imageType] || {
     name: 'Неизвестное устройство',
     image: '/images/devices/unknown-item.svg',
     fallback: '📱'
   };
   
+  const imagePath = `${basePath}${device.image}`;
+  
   return `
     <img 
-      src="${device.image}" 
+      src="${imagePath}" 
       alt="${device.name}" 
       class="device-image-img"
       onerror="this.outerHTML='<div class=\\'device-image\\'>${device.fallback}</div>'"
@@ -131,7 +146,8 @@ function createDeviceCard(device) {
     if (e.target.closest('.device-state-clickable') || e.target.closest('.state-dropdown')) {
       return;
     }
-    window.location.href = `./device-detail.html?id=${device.id}`;
+    const basePath = getBasePath();
+    window.location.href = `${basePath}/device-detail.html?id=${device.id}`;
   });
   
   if (canChange) {
@@ -233,7 +249,8 @@ function getStateIcon(state) {
   } else if (state === 'work') {
     return '<svg class="device-state-icon" viewBox="0 0 24 24" fill="currentColor" style="width: 16px; height: 16px;"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>';
   } else if (state === 'busy') {
-    return '<img src="/images/avatar/unknown-avatar.svg" alt="User" class="device-state-avatar">';
+    const basePath = getBasePath();
+    return `<img src="${basePath}/images/avatar/unknown-avatar.svg" alt="User" class="device-state-avatar">`;
   }
   return '';
 }
