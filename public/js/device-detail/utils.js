@@ -1,4 +1,4 @@
-function getBasePath() {
+export function getBasePath() {
   const path = window.location.pathname;
   const pathParts = path.split('/').filter(p => p);
   if (pathParts.length > 0 && pathParts[0] !== '') {
@@ -41,9 +41,6 @@ export async function safeFetch(url, options = {}) {
   }
 }
 
-function getImageBasePath() {
-  return getBasePath();
-}
 
 export const deviceImages = {
   'ventilation': {
@@ -69,7 +66,7 @@ export const deviceImages = {
 };
 
 export function getDeviceImageHTML(imageType) {
-  const basePath = getImageBasePath();
+  const basePath = getBasePath();
   const device = deviceImages[imageType] || {
     name: 'Неизвестное устройство',
     image: '/images/devices/unknown-item.svg',

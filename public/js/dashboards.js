@@ -1,17 +1,5 @@
 import { deviceStatesManager } from './deviceStates.js';
-import { showModal, safeFetch } from './device-detail/utils.js';
-
-function getBasePath() {
-  const path = window.location.pathname;
-  const pathParts = path.split('/').filter(p => p);
-  if (pathParts.length > 0 && pathParts[0] !== '') {
-    const repoName = pathParts[0];
-    if (repoName !== 'index.html' && repoName !== 'dashboards.html' && repoName !== 'device-detail.html' && repoName !== 'error.html') {
-      return `/${repoName}`;
-    }
-  }
-  return '';
-}
+import { showModal, safeFetch, getBasePath } from './device-detail/utils.js';
 
 const deviceImages = {
   'ventilation': {
