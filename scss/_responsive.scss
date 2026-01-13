@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    flex-direction: column;
+  }
+
+  .dashboard-grid .device-card {
+    width: 100%;
+  }
+
+  .device-detail-card {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .date-filters {
+    flex-wrap: wrap;
+  }
+
+  .table-header,
+  .table-row {
+    flex-wrap: wrap;
+  }
+
+  .table-header-cell,
+  .table-cell {
+    width: 100% !important;
+    flex: none !important;
+  }
+}

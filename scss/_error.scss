@@ -1,0 +1,30 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.error-content {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: $spacing-xl;
+  text-align: center;
+}
+
+.error-message {
+  font-size: $spacing-xl;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+}
+
+.error-button {
+  display: inline-block;
+  padding: $spacing-md $spacing-xl;
+  background-color: $color-primary-blue;
+  color: $color-white;
+  text-decoration: none;
+  border-radius: $radius-md;
+  @include text-sm;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $color-primary-blue-hover;
+  }
+}

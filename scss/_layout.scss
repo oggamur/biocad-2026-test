@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.main-content {
+  margin-top: $header-height;
+  padding: $spacing-xl;
+  min-height: calc(100vh - #{$header-height});
+  max-width: $max-page-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xl;
+  max-width: 100%;
+  margin: 0;
+  justify-content: flex-start;
+}

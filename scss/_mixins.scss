@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-xs {
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+  letter-spacing: $letter-spacing-xs;
+}
+
+@mixin text-sm {
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  letter-spacing: $letter-spacing-sm;
+}

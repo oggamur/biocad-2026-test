@@ -1,0 +1,695 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.device-detail-card {
+  background-color: $color-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+  margin: 0 auto;
+  max-width: $max-page-width;
+  overflow: hidden;
+}
+
+.device-detail-top {
+  background: $color-white;
+}
+
+.device-detail-header-section {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-lg;
+  gap: 10px;
+}
+
+.device-detail-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: $radius-full;
+  @include flex-center;
+  font-size: $font-size-lg;
+  overflow: hidden;
+
+  img.device-detail-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: $radius-full;
+    padding: $spacing-xs;
+  }
+}
+
+.device-detail-info {
+  flex: 1;
+  @include flex-column;
+  gap: $spacing-xs;
+  padding-top: 0;
+}
+
+.device-detail-name-row {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+}
+
+.device-detail-name {
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.device-edit-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.device-detail-id {
+  @include text-xs;
+  color: $color-text-secondary;
+}
+
+.device-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: $spacing-sm;
+}
+
+.device-state-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: 2px $spacing-xs 2px $spacing-sm;
+  border: 1px solid $color-border-medium;
+  border-radius: $radius-sm;
+  @include text-sm;
+  color: $color-text-secondary;
+  background: $color-white;
+  cursor: pointer;
+  position: relative;
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &.state-mine {
+    color: $color-text-secondary;
+    
+    span {
+      color: $color-primary-green;
+    }
+    
+    svg {
+      color: $color-primary-green;
+      fill: $color-primary-green;
+    }
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.state-dropdown {
+  position: absolute;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+  z-index: 1000;
+  min-width: 150px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.state-dropdown-option {
+  padding: $spacing-sm $spacing-md;
+  @include text-sm;
+  color: $color-text-primary;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  
+  &:hover {
+    background-color: $color-bg;
+  }
+  
+  &.selected {
+    background-color: $color-bg;
+    font-weight: $font-weight-medium;
+  }
+  
+  &:first-child {
+    border-top-left-radius: $radius-md;
+    border-top-right-radius: $radius-md;
+  }
+  
+  &:last-child {
+    border-bottom-left-radius: $radius-md;
+    border-bottom-right-radius: $radius-md;
+  }
+}
+
+.favorite-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: $color-favorite;
+  @include flex-center;
+  flex-shrink: 0;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  &.active {
+    svg {
+      fill: currentColor;
+      stroke: none;
+      stroke-width: 0;
+    }
+  }
+}
+
+.device-tabs {
+  display: flex;
+  border-bottom: 1px solid $color-divider;
+}
+
+.device-tab {
+  flex: 0 0 auto;
+  padding: $spacing-md $spacing-xl;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.device-tab-text {
+  @include text-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-lg;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+  white-space: nowrap;
+}
+
+.device-tab.active {
+  border-bottom-color: $color-primary-green;
+}
+
+.device-tab.active .device-tab-text {
+  color: $color-primary-green;
+}
+
+.device-tab-indicator {
+  display: none;
+}
+
+.tab-divider {
+  display: none;
+}
+
+.tab-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.analytics-content {
+  @include flex-column;
+  overflow: visible;
+}
+
+.date-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm $spacing-lg;
+  gap: $spacing-md;
+}
+
+.date-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.date-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: $spacing-sm;
+  padding: 10px $spacing-sm;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-white;
+  width: 170px;
+  @include text-sm;
+  color: $color-secondary-900;
+
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    min-width: 0;
+    @include text-sm;
+    color: $color-secondary-900;
+    padding: 0;
+    
+    &::placeholder {
+      color: $color-text-disabled;
+    }
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+.date-arrow {
+  padding: 10px $spacing-md;
+  @include flex-center;
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.save-pdf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: $spacing-sm $spacing-sm $spacing-sm $spacing-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-white;
+  color: $color-primary-green;
+  @include text-sm;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.save-pdf-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-divider {
+  width: 1px;
+  height: 24px;
+  background-color: $color-chip-bg;
+}
+
+.time-chips {
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg 20px;
+  overflow-x: auto;
+}
+
+.time-chip {
+  padding: 6px $spacing-md;
+  border-radius: $radius-xl;
+  background-color: $color-divider;
+  @include text-sm;
+  color: $color-text-primary;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &.active {
+    background-color: $color-chip-bg;
+  }
+}
+
+.data-table-container {
+  width: 100%;
+}
+
+.table-header {
+  display: flex;
+  align-items: start;
+  border-bottom: 1px solid $color-divider;
+}
+
+.table-header-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-md;
+  @include text-sm;
+  color: $color-text-disabled;
+
+  &:first-child {
+    width: 160px;
+    justify-content: flex-start;
+  }
+
+  &:nth-child(2) {
+    width: 130px;
+    justify-content: flex-start;
+  }
+
+  &:nth-child(3) {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  &:last-child {
+    width: 170px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
+.date-sort-header,
+.user-sort-header,
+.work-type-filter-header {
+  cursor: pointer;
+  position: relative;
+  
+  &:hover:not(.dropdown-open):not(.sort-disabled) {
+    opacity: 0.8;
+  }
+  
+  &.sort-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  svg.active-sort {
+    color: $color-primary-green;
+  }
+}
+
+.sort-dropdown {
+  position: fixed;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1002;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.sort-dropdown-option {
+  padding: $spacing-sm $spacing-md;
+  @include text-sm;
+  color: $color-text-primary;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  
+  &:hover {
+    background-color: $color-bg;
+  }
+  
+  &.selected {
+    background-color: $color-bg;
+    font-weight: $font-weight-medium;
+  }
+  
+  &:first-child {
+    border-top-left-radius: $radius-md;
+    border-top-right-radius: $radius-md;
+  }
+  
+  &:last-child {
+    border-bottom-left-radius: $radius-md;
+    border-bottom-right-radius: $radius-md;
+  }
+}
+
+.table-row {
+  display: flex;
+  align-items: start;
+  border-bottom: 1px solid $color-divider;
+}
+
+.table-cell {
+  padding: $spacing-md;
+  @include text-sm;
+
+  &:first-child {
+    width: 160px;
+    color: $color-text-secondary;
+  }
+
+  &:nth-child(2) {
+    width: 130px;
+    color: $color-text-secondary;
+  }
+
+  &:nth-child(3) {
+    flex: 1;
+    color: $color-text-primary;
+  }
+
+  &:last-child {
+    width: 170px;
+  }
+
+  a {
+    color: $color-link;
+    text-decoration: none;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: $spacing-lg;
+  gap: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.pagination-info {
+  padding: $spacing-lg;
+  @include text-sm;
+  color: $color-text-disabled;
+}
+
+.pagination-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md $spacing-sm $spacing-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  @include text-sm;
+  color: $color-text-primary;
+  background: $color-white;
+  cursor: pointer;
+  position: relative;
+  min-width: 80px;
+  user-select: none;
+  z-index: 10;
+}
+
+.pagination-select svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.pagination-select-dropdown {
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.pagination-select-option {
+  padding: $spacing-sm $spacing-md;
+  @include text-sm;
+  color: $color-text-primary;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  
+  &:hover {
+    background-color: $color-bg;
+  }
+  
+  &:first-child {
+    border-top-left-radius: $radius-md;
+    border-top-right-radius: $radius-md;
+  }
+  
+  &:last-child {
+    border-bottom-left-radius: $radius-md;
+    border-bottom-right-radius: $radius-md;
+  }
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.pagination-btn {
+  padding: $spacing-sm;
+  @include flex-center;
+  cursor: pointer;
+  color: $color-text-primary;
+  border: none;
+  background: transparent;
+  min-width: 40px;
+  height: 40px;
+  transition: background-color 0.2s ease;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $color-bg;
+    border-radius: $radius-sm;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.description-content {
+  @include flex-column;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+}
+
+.description-line {
+  height: $spacing-sm;
+  width: 100%;
+  background-color: $color-divider;
+  height: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.description-item {
+  @include flex-column;
+  gap: 2px;
+}
+
+.description-label {
+  @include text-xs;
+  color: $color-text-disabled;
+}
+
+.description-value {
+  @include text-xs;
+  color: $color-text-primary;
+}
+
+.table-empty-message {
+  padding: $spacing-xl;
+  text-align: center;
+  
+  p {
+    @include text-sm;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background-color: $color-white;
+  border-radius: $radius-md;
+  padding: $spacing-xl;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: $shadow-lg;
+  @include flex-column;
+  gap: $spacing-lg;
+}
+
+.modal-message {
+  @include text-sm;
+  color: $color-text-primary;
+  margin: 0;
+  text-align: center;
+}
+
+.modal-close-btn {
+  padding: $spacing-sm $spacing-lg;
+  background-color: $color-primary-green;
+  color: $color-white;
+  border: none;
+  border-radius: $radius-md;
+  @include text-sm;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  align-self: center;
+  min-width: 120px;
+  
+  &:hover {
+    background-color: darken($color-primary-green, 10%);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}

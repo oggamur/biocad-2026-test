@@ -1,0 +1,32 @@
+{
+  "devices": [
+    {
+      "type": "ventilation",
+      "name": "Рециркуляционная вентиляция",
+      "fullName": "Рециркуляционная вентиляция, Trox, xcube, Приточно-рециркуляционная установка 2С-ПР10.1",
+      "image": "ventilation.svg",
+      "description": "Приточно-рециркуляционная установка"
+    },
+    {
+      "type": "osmometer",
+      "name": "Осмометр",
+      "fullName": "Осмометр Киви Осмометрия ОСКР-1М",
+      "image": "osmometer.svg",
+      "description": "Осмометр для измерения осмоляльности"
+    },
+    {
+      "type": "alkali",
+      "name": "Система щелочи",
+      "fullName": "Система щелочи, Watertown, NaOH",
+      "image": "unknown-item.svg",
+      "description": "Система подачи щелочи"
+    },
+    {
+      "type": "biosafety",
+      "name": "Бокс биологической безопасности",
+      "fullName": "Бокс биологической безопасности",
+      "image": "bio-box.svg",
+      "description": "Бокс для работы с биологическими материалами"
+    }
+  ]
+}

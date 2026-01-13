@@ -1,0 +1,55 @@
+$color-white: #ffffff;
+$color-bg: #f5f5f5;
+$color-text-primary: rgba(0, 0, 0, 0.87);
+$color-text-secondary: rgba(0, 0, 0, 0.6);
+$color-text-disabled: rgba(0, 0, 0, 0.38);
+$color-text-hint: rgba(0, 0, 0, 0.12);
+$color-border: rgba(0, 0, 0, 0.12);
+$color-border-medium: rgba(0, 0, 0, 0.38);
+$color-divider: rgba(33, 33, 33, 0.08);
+$color-primary-green: #23b04a;
+$color-primary-blue: #0f91e6;
+$color-primary-blue-hover: #0d7bc4;
+$color-link: #2e9bc2;
+$color-favorite: #ee3f44;
+$color-chip-bg: #c2e7c8;
+$color-secondary-900: #3c3c3c;
+
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 24px;
+
+$font-family: "Roboto", sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-lg: 20px;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$line-height-xs: 16px;
+$line-height-sm: 20px;
+$line-height-base: 24px;
+$letter-spacing-xs: 0.4px;
+$letter-spacing-sm: 0.25px;
+$letter-spacing-base: 0.15px;
+$letter-spacing-lg: 1.25px;
+
+$header-height: 48px;
+$max-page-width: 1340px;
+$device-card-height: 126px;
+$device-card-width: 296px;
+
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 10px;
+$radius-xl: 16px;
+$radius-full: 50%;
+
+$shadow-sm: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+$shadow-md: 0px 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+
+$transition-fast: 0.2s;
+
+$z-header: 1000;
