@@ -14,8 +14,38 @@
     border-radius: 0;
   }
 
-  .date-filters {
+  .device-detail-header-section {
     flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  .device-detail-actions {
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    width: 100%;
+    justify-content: flex-start;
+    padding: $spacing-xs;
+  }
+
+  .date-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $spacing-md;
+  }
+
+  .date-input-group {
+    flex-direction: column;
+    width: 100%;
+    gap: $spacing-sm;
+  }
+
+  .date-input {
+    width: 100% !important;
+  }
+
+  .date-arrow {
+    transform: rotate(90deg);
+    align-self: center;
   }
 
   .table-header,
@@ -27,5 +57,101 @@
   .table-cell {
     width: 100% !important;
     flex: none !important;
+    min-width: 0;
+    padding: $spacing-sm;
+    justify-content: flex-start !important;
+    text-align: left;
+  }
+
+  .table-header-cell {
+    border-bottom: 1px solid $color-divider;
+    font-weight: $font-weight-medium;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .table-row {
+    border-bottom: 1px solid $color-divider;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .table-cell {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: stretch;
+    gap: $spacing-md;
+    padding: $spacing-md;
+  }
+
+  .pagination-info {
+    white-space: nowrap;
+    text-align: center;
+    padding: $spacing-sm;
+  }
+
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xs;
+    flex-wrap: wrap;
+  }
+
+  .pagination-btn {
+    min-width: 40px;
+    padding: $spacing-xs $spacing-sm;
+  }
+
+  .pagination-select {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .device-detail-header-section {
+    padding: $spacing-md;
+  }
+
+  .device-detail-name {
+    font-size: $font-size-sm;
+  }
+
+  .device-detail-actions {
+    gap: $spacing-xs;
+  }
+
+  .device-state-dropdown {
+    font-size: $font-size-xs;
+    padding: 2px $spacing-xs;
+  }
+
+  .date-input {
+    padding: 8px $spacing-xs;
+    font-size: $font-size-xs;
+  }
+
+  .table-header-cell,
+  .table-cell {
+    font-size: $font-size-xs;
+    padding: $spacing-xs;
+  }
+
+  .pagination-info {
+    font-size: $font-size-xs;
+  }
+
+  .pagination-btn {
+    padding: $spacing-xs;
+    min-width: 36px;
+    font-size: $font-size-xs;
   }
 }

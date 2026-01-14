@@ -1026,8 +1026,33 @@ body {
     margin: 0;
     border-radius: 0;
   }
-  .date-filters {
+  .device-detail-header-section {
     flex-wrap: wrap;
+    gap: 12px;
+  }
+  .device-detail-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 4px;
+  }
+  .date-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .date-input-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+  .date-input {
+    width: 100% !important;
+  }
+  .date-arrow {
+    transform: rotate(90deg);
+    align-self: center;
   }
   .table-header,
   .table-row {
@@ -1037,6 +1062,84 @@ body {
   .table-cell {
     width: 100% !important;
     flex: none !important;
+    min-width: 0;
+    padding: 8px;
+    justify-content: flex-start !important;
+    text-align: left;
+  }
+  .table-header-cell {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+    font-weight: 500;
+  }
+  .table-header-cell:last-child {
+    border-bottom: none;
+  }
+  .table-row {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+  }
+  .table-row:last-child {
+    border-bottom: none;
+  }
+  .table-cell {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .pagination {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+  .pagination-info {
+    white-space: nowrap;
+    text-align: center;
+    padding: 8px;
+  }
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .pagination-btn {
+    min-width: 40px;
+    padding: 4px 8px;
+  }
+  .pagination-select {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 480px) {
+  .device-detail-header-section {
+    padding: 12px;
+  }
+  .device-detail-name {
+    font-size: 14px;
+  }
+  .device-detail-actions {
+    gap: 4px;
+  }
+  .device-state-dropdown {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+  .date-input {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  .table-header-cell,
+  .table-cell {
+    font-size: 12px;
+    padding: 4px;
+  }
+  .pagination-info {
+    font-size: 12px;
+  }
+  .pagination-btn {
+    padding: 4px;
+    min-width: 36px;
+    font-size: 12px;
   }
 }
 
